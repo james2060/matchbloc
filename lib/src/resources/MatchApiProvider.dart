@@ -17,9 +17,11 @@ class MatchApiProvider {
 
         QuerySnapshot<Map<String, dynamic>> querySnapshot = await collectionReference.get();
 
-        List<Match> matches = [];
+        List<Matchdate> matches = [];
         for (var doc in querySnapshot.docs) {}
+        return matches;
       }
+
 
 
     //FireStore DB로 부터 Collection에 특정 Document를 Read 하여 출력
