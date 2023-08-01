@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,21 +43,41 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDRq6zf2v3KW4cHo9J8mouC82OARSRp9MU',
+    appId: '1:452372668135:web:4e0c7d29d9e1239d244c42',
+    messagingSenderId: '452372668135',
+    projectId: 'matchbloc',
+    authDomain: 'matchbloc.firebaseapp.com',
+    storageBucket: 'matchbloc.appspot.com',
+    measurementId: 'G-B9M58CRTQ9',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD9wWVxM65_sT91yQPPh02j_K7Nhyux2Xc',
-    appId: '1:992359183996:android:62bc8393073a10f657bbf9',
-    messagingSenderId: '992359183996',
-    projectId: 'soccerlab-c155c',
-    storageBucket: 'soccerlab-c155c.appspot.com',
+    apiKey: 'AIzaSyAtK8a-YQrWyQnOSHYFeQ-sQ8-fnFV6QJ4',
+    appId: '1:452372668135:android:3647fb077a070541244c42',
+    messagingSenderId: '452372668135',
+    projectId: 'matchbloc',
+    storageBucket: 'matchbloc.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAOQBthUcqXmAwX-TI78Ek4-s7lW3Z-UgQ',
-    appId: '1:992359183996:ios:6c430bc5d1e05d5c57bbf9',
-    messagingSenderId: '992359183996',
-    projectId: 'soccerlab-c155c',
-    storageBucket: 'soccerlab-c155c.appspot.com',
-    iosClientId: '992359183996-jnb87e8bjsi3k4koeu188akub9o09eno.apps.googleusercontent.com',
-    iosBundleId: 'com.example.soccerlab',
+    apiKey: 'AIzaSyBRLskQpVCfrtb9yIcirP-P8Co4gsEHSuU',
+    appId: '1:452372668135:ios:610549253d391714244c42',
+    messagingSenderId: '452372668135',
+    projectId: 'matchbloc',
+    storageBucket: 'matchbloc.appspot.com',
+    iosClientId: '452372668135-dd0cjrphkprmv0h2t1vm05tbsog89r5l.apps.googleusercontent.com',
+    iosBundleId: 'com.example.matchbloc',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBRLskQpVCfrtb9yIcirP-P8Co4gsEHSuU',
+    appId: '1:452372668135:ios:ca92bb4963b92940244c42',
+    messagingSenderId: '452372668135',
+    projectId: 'matchbloc',
+    storageBucket: 'matchbloc.appspot.com',
+    iosClientId: '452372668135-0muqf4fu4hlddj2bauteavmv2c8vhr69.apps.googleusercontent.com',
+    iosBundleId: 'com.example.matchbloc.RunnerTests',
   );
 }

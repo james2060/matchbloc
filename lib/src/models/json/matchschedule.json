@@ -1,0 +1,12 @@
+{
+  "name": "MatchSchedule",
+  "matchdate":
+  {
+    "round": "Matchday 1",
+    "startdate":"2023-07-31 07:00:00",
+    "enddate": "2023-07-31 09:00:00",
+    "location":"가산디지털운동장",
+    "team1": "GridFC",
+    "team2": "스트레인져스"
+  }
+}

@@ -4,6 +4,8 @@
 
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 MatchInfo matchInfoFromJson(String str) => MatchInfo.fromJson(json.decode(str));
 
 String matchInfoToJson(MatchInfo data) => json.encode(data.toJson());
@@ -17,6 +19,7 @@ class MatchInfo {
     required this.matches,
   });
 
+
   factory MatchInfo.fromJson(Map<String, dynamic> json) => MatchInfo(
     name: json["name"],
     matches: List<Match>.from(json["matches"].map((x) => Match.fromJson(x))),
@@ -29,17 +32,17 @@ class MatchInfo {
 }
 
 class Match {
-  String round;
-  DateTime startdate;
-  DateTime enddate;
-  String location;
-  String team1;
-  String team2;
-  int matchresult;
-  int numofparticipants;
-  int team1Score;
-  int team2Score;
-  List<Scorer> scorer;
+  String? round;
+  DateTime? startdate;
+  DateTime? enddate;
+  String? location;
+  String? team1;
+  String? team2;
+  int? matchresult;
+  int? numofparticipants;
+  int? team1Score;
+  int? team2Score;
+  List<Scorer> scorer = [];
 
   Match({
     required this.round,
@@ -54,6 +57,7 @@ class Match {
     required this.team2Score,
     required this.scorer,
   });
+
 
   factory Match.fromJson(Map<String, dynamic> json) => Match(
     round: json["round"],
@@ -71,8 +75,8 @@ class Match {
 
   Map<String, dynamic> toJson() => {
     "round": round,
-    "startdate": startdate.toIso8601String(),
-    "enddate": enddate.toIso8601String(),
+    "startdate": startdate.toString(),
+    "enddate": enddate.toString(),
     "location": location,
     "team1": team1,
     "team2": team2,
@@ -82,6 +86,7 @@ class Match {
     "team2score": team2Score,
     "scorer": List<dynamic>.from(scorer.map((x) => x.toJson())),
   };
+
 }
 
 class Scorer {

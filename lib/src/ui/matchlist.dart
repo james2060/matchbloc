@@ -11,7 +11,7 @@ class MatchList extends StatelessWidget {
         title: Text('Match All list'),
       ),
       body: StreamBuilder(
-        stream: bloc.allMovies,
+        stream: bloc.allMatch,
         builder: (context, AsyncSnapshot<MatchInfo> snapshot) {
           if (snapshot.hasData) {
             return buildList(snapshot);
@@ -23,7 +23,7 @@ class MatchList extends StatelessWidget {
       ),
     );
   }
-
+//데이터를 그리드뷰에 출력하는 함수
   Widget buildList(AsyncSnapshot<MatchInfo> snapshot) {
     return GridView.builder(
         itemCount: 2,

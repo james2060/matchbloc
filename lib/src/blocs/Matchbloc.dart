@@ -6,7 +6,7 @@ class MatchBloc {
   final _repository = Repository();
   final _matchinfoFetcher = PublishSubject<MatchInfo>();
 
-  Stream<MatchInfo> get allMovies => _matchinfoFetcher.stream;
+  Stream<MatchInfo> get allMatch => _matchinfoFetcher.stream;
 
   fetchAllMatch() async {
     MatchInfo matchInfoModel = await _repository.fetchAllMatchInfo();
