@@ -1,15 +1,18 @@
+import 'package:matchbloc/src/models/matchschedule_model.dart';
+
 import '../resources/repository.dart';
 import 'package:rxdart/rxdart.dart';
 import '../models/matchinfo_model.dart';
+import '../models/matchschedule_model.dart';
 
 class MatchBloc {
   final _repository = Repository();
-  final _matchinfoFetcher = PublishSubject<MatchInfo>();
+  final _matchinfoFetcher = PublishSubject<List<MatchScedule>>();
 
-  Stream<MatchInfo> get allMatch => _matchinfoFetcher.stream;
+  Stream<List<MatchScedule>> get allMatch => _matchinfoFetcher.stream;
 
   fetchAllMatch() async {
-    MatchInfo matchInfoModel = await _repository.fetchAllMatchInfo();
+    List<MatchScedule> matchInfoModel = await _repository.fetchAllMatchInfo();
     _matchinfoFetcher.sink.add(matchInfoModel);
   }
   dispose() {

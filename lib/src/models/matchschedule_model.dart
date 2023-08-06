@@ -4,6 +4,12 @@
 
 import 'dart:convert';
 
+MatchScedule MatchSceduleFromJson(String str) => MatchScedule.fromJson(json.decode(str));
+
+String MatchSceduleToJson(MatchScedule data) => json.encode(data.toJson());
+
+//하나의 경기 일정을 가져와 변수에 저장한다.
+//저장된 값을 리스트에 저장해서 관리해 보자.
 class MatchScedule {
   String? name;
   Matchdate? matchdate;
@@ -56,6 +62,8 @@ class Matchdate {
     location: json["location"],
     team1: json["team1"],
     team2: json["team2"],
+
+
   );
 
   Map<String, dynamic> toJson() => {
