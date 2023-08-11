@@ -1,0 +1,14 @@
+{
+  "group_profile":{
+    "groupidx": "1",
+    "groupname": "GRIDFC",
+    "create_date":"2019-09-09",
+    "member_count":"AM",
+    "experience":"19year",
+    "home_location":"서울디지털운동장",
+    "level":"하",
+    "desc":"we are the good club",
+    "wait_newmember":false,
+    "open_group_info": true
+  }
+}
