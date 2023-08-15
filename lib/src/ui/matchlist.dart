@@ -16,12 +16,17 @@ class _MatchListState extends State<MatchList> {
     bloc.fetchAllMatch();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Match All list'),
-        leading: IconButton(icon: Icon(Icons.refresh),onPressed: () {
-          //데이터를 다시 가져온다.
-         bloc.fetchAllMatch();
-        },
-        ),
+        title: Text('Management'),
+        centerTitle: true,
+        leading: IconButton(icon: Icon(Icons.refresh), onPressed: (){
+          bloc.fetchAllMatch();
+        }),
+        actions: [
+          IconButton(icon: Icon(Icons.add_task), onPressed: (){
+
+          }),
+          IconButton(icon: Icon(Icons.add_moderator), onPressed: null),
+        ],
       ),
       body: StreamBuilder<List<MatchScedule>>(
         //모든 경기 리스트를 가져온다.
@@ -42,7 +47,6 @@ class _MatchListState extends State<MatchList> {
   Widget buildList(AsyncSnapshot<List<MatchScedule>> snapshot) {
 
     List<MatchScedule> matchlist=snapshot.data!;
-
 
     return ListView.builder(
       itemCount:matchlist.length,

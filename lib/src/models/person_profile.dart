@@ -1,6 +1,6 @@
 // To parse this JSON data, do
 //
-//     final personProfile = personProfileFromJson(jsonString);
+//     final personProfile = personProfileFromJson(jsonString?);
 
 import 'dart:convert';
 
@@ -9,13 +9,13 @@ PersonProfile personProfileFromJson(String str) {
   return PersonProfile.fromJson(jsonData);
 }
 
-String personProfileToJson(PersonProfile data) {
+String? personProfileToJson(PersonProfile data) {
   final dyn = data.toJson();
   return json.encode(dyn);
 }
 
 class PersonProfile {
-  PersionProfile persionProfile;
+  PersionProfile? persionProfile;
 
   PersonProfile({
     this.persionProfile,
@@ -25,24 +25,24 @@ class PersonProfile {
     persionProfile: PersionProfile.fromJson(json["persion_profile"]),
   );
 
-  Map<String, dynamic> toJson() => {
-    "persion_profile": persionProfile.toJson(),
+  Map<String?, dynamic> toJson() => {
+    "persion_profile": persionProfile?.toJson(),
   };
 }
 
 class PersionProfile {
-  String name;
-  String age;
-  String userid;
-  String userphone;
-  String groupidx;
-  String groupname;
-  String regDate;
-  String quitDate;
-  String position;
-  String experience;
-  String married;
-  bool stateofyongbyung;
+  String? name;
+  String? age;
+  String? userid;
+  String? userphone;
+  String? groupidx;
+  String? groupname;
+  String? regDate;
+  String? quitDate;
+  String? position;
+  String? experience;
+  String? married;
+  bool? stateofyongbyung;
 
   PersionProfile({
     this.name,

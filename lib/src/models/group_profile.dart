@@ -15,7 +15,7 @@ String groupProfileToJson(GroupProfile data) {
 }
 
 class GroupProfile {
-  GroupProfileClass groupProfile;
+  GroupProfileClass? groupProfile;
 
   GroupProfile({
     this.groupProfile,
@@ -26,21 +26,22 @@ class GroupProfile {
   );
 
   Map<String, dynamic> toJson() => {
-    "group_profile": groupProfile.toJson(),
+    "group_profile": groupProfile?.toJson(),
   };
 }
 
 class GroupProfileClass {
-  String groupidx;
-  String groupname;
-  String createDate;
-  String memberCount;
-  String experience;
-  String homeLocation;
-  String level;
-  String desc;
-  bool waitNewmember;
-  bool openGroupInfo;
+  String? groupidx;
+  String? groupname;
+  String? createDate;
+  String? memberCount;
+  String? experience;
+  String? homeLocation;
+  String? createdby;
+  String? level;
+  String? desc;
+  bool? waitNewmember;
+  bool? openGroupInfo;
 
   GroupProfileClass({
     this.groupidx,
@@ -49,6 +50,7 @@ class GroupProfileClass {
     this.memberCount,
     this.experience,
     this.homeLocation,
+    this.createdby,
     this.level,
     this.desc,
     this.waitNewmember,
@@ -62,6 +64,7 @@ class GroupProfileClass {
     memberCount: json["member_count"],
     experience: json["experience"],
     homeLocation: json["home_location"],
+    createdby: json["createby"],
     level: json["level"],
     desc: json["desc"],
     waitNewmember: json["wait_newmember"],
@@ -75,6 +78,7 @@ class GroupProfileClass {
     "member_count": memberCount,
     "experience": experience,
     "home_location": homeLocation,
+    "createdby": createdby,
     "level": level,
     "desc": desc,
     "wait_newmember": waitNewmember,
